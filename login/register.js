@@ -22,3 +22,8 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         document.getElementById("message").innerText = data.message || "Gagal registrasi";
     }
 });
+
+<p id="message"></p>
+<script src="js/register.js" defer></script>
+</body>
+</html>
