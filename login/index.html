@@ -1,85 +1,48 @@
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Login Form</title>
-    <meta name="description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta name="author" content="Aigars Silkalns / Colorlib">
-    <link rel="canonical" href="https://puikinsh.github.io/login-forms/forms/minimal/">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%236366f1'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='system-ui,sans-serif'>L</text></svg>">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Minimal Login Form">
-    <meta property="og:description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta property="og:url" content="https://puikinsh.github.io/login-forms/forms/minimal/">
-    <meta property="og:image" content="https://puikinsh.github.io/login-forms/assets/screenshots/minimal.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Minimal Login Form">
-    <meta name="twitter:description" content="Ultra-minimal login form built with system fonts and the smallest possible footprint.">
-    <meta name="twitter:image" content="https://puikinsh.github.io/login-forms/assets/screenshots/minimal.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <h2>Sign In</h2>
-                <p>Enter your credentials to continue</p>
-            </div>
-            
-            <form class="login-form" id="loginForm" novalidate>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="username" id="username" name="username" required autocomplete="username">
-                        <label for="username">Username</label>
-                    </div>
-                    <span class="error-message" id="emailError"></span>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="password" id="password" name="password" required autocomplete="current-password">
-                        <label for="password">Password</label>
-                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
-                            <span class="toggle-icon"></span>
-                        </button>
-                    </div>
-                    <span class="error-message" id="passwordError"></span>
-                </div>
-
-                <div class="form-options">
-                    <div class="remember-wrapper">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember" class="checkbox-label">
-                            <span class="checkmark"></span>
-                            Remember me
-                        </label>
-                    </div>
-                    <a href="#" class="forgot-password">Forgot password?</a>
-                </div>
-
-                <button type="submit" class="login-btn">
-                    <span class="btn-text">Sign In</span>
-                    <span class="btn-loader"></span>
-                </button>
-                <div id="alertBox" class="alert" style="display:none;"></div>
-            </form>
-
-            <div class="signup-link">
-                <p>Don't have an account? <a href="#">Create one</a></p>
-            </div>
-
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h3>Welcome back!</h3>
-                <p>Redirecting to your dashboard...</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="../../shared/js/form-utils.js"></script>
-    <script src="script.js"></script>
-       
-<script src="js/login.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required />
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+      <div class="form login">
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+      </script>
+    </section>
+  </body>
 </html>
