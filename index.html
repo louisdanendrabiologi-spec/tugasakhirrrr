@@ -46,13 +46,19 @@ https://www.tooplate.com/view/2117-infinite-loop
               </li>
               <li class="nav-item">
                   <a class="nav-link tm-nav-link" href="#contact">Contact</a>
-                  <p id="userInfo">Belum login</p>
-
-                <div id="authArea">
-                    <button onclick="goLogin()" class="nav-cta">Login</button>
-                </div>
-              </li>                    
+              </li>
             </ul>
+            
+            <!-- LOGIN AREA (WAJIB DI LUAR UL) -->
+            <div class="ml-3 d-flex align-items-center">
+              <p id="userInfo" class="mb-0 mr-2 text-white">Belum login</p>
+            
+              <div id="authArea">
+                <button onclick="goLogin()" class="nav-cta btn btn-primary btn-sm">
+                  Login
+                </button>
+              </div>
+            </div>
           </div>        
         </div>
       </nav>
