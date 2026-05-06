@@ -4,21 +4,32 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+    const msgElement = document.getElementById("message");
 
-    const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
-    });
+    msgElement.innerText = "Processing...";
 
-    const data = await res.json();
+    try {
+        const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+        });
 
-    if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
+        const data = await res.json();
+
+        if (data.status === "success") {
+            msgElement.style.color = "green";
+            msgElement.innerText = "Registrasi berhasil! Mengalihkan...";
+            setTimeout(() => {
+                window.location.reload(); // Refresh untuk balik ke tampilan Sign In
+            }, 2000);
+        } else {
+            msgElement.style.color = "red";
+            msgElement.innerText = data.message || "Gagal registrasi";
+        }
+    } catch (error) {
+        msgElement.innerText = "Error menghubungi server.";
     }
 });
