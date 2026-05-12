@@ -553,5 +553,31 @@ https://www.tooplate.com/view/2117-infinite-loop
       });
     </script>
     <script src="login/js/welcome.js"></script>
+    <script>
+      // Fungsi supaya tombol Login bisa diklik dan pindah halaman
+      function goLogin() {
+        window.location.href = "login/index.html";
+      }
+    
+      // Fungsi untuk Logout
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.reload();
+      }
+    
+      // Cek status login saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", function() {
+        const user = localStorage.getItem("user");
+        const userInfo = document.getElementById("userInfo");
+        const authArea = document.getElementById("authArea");
+    
+        if (user) {
+          // Ganti tulisan "Belum login" jadi nama user
+          userInfo.innerHTML = `Selamat Datang, <b>${user}</b>`;
+          // Ganti tombol Login jadi tombol Logout
+          authArea.innerHTML = `<button onclick="logout()" class="btn btn-danger btn-sm">Logout</button>`;
+        }
+      });
+    </script>
   </body>
 </html>
