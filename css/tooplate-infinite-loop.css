@@ -272,9 +272,11 @@ blockquote {
   color: white;
   background-image: url(../img/infinite-loop-02.jpg);
   background-size: cover;
+  background-position: 50% 40%;
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
+  height: 100vh;
 }
 
 @media (max-width: 991px) {
