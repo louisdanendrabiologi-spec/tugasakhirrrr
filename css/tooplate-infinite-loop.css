@@ -271,13 +271,14 @@ blockquote {
 #testimonials {
   color: white;
   background-image: url(../img/infinite-loop-02.jpg);
-  background-size: cover;
-  background-position: 50% 40%;
+  background-size: cover;       /* WAJIB: Ini yang bikin gambar nutup semua celah */
+  background-position: center;  /* Biar pemandangan sawahnya pas di tengah */
   background-repeat: no-repeat;
-  background-size: 100%;
   position: relative;
-  height: 100vh;
-  width: 70%;
+  min-height: 100vh;           /* Pakai min-height agar kalau teksnya panjang, background ikut nambah */
+  width: 100%;                 /* Ganti dari 70% ke 100% biar gak ada putih di samping juga */
+  display: flex;               /* Opsional: Biar konten di dalamnya rapi di tengah */
+  align-items: center;
 }
 
 @media (max-width: 991px) {
@@ -701,4 +702,32 @@ p {
   .tm-gallery-item {
     margin: 0;
   }
+}
+/* Warna default untuk layar laptop (Putih) */
+.custom-nav-text {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+/* KHUSUS UNTUK TAMPILAN HP (max-width: 767px) */
+@media (max-width: 767px) {
+    .custom-nav-text {
+        /* Ganti warna ini jika background HP kamu terang (misal: Abu gelap atau Biru) */
+        color: #00ccff; 
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    #authContainer {
+        text-align: center; /* Membuat teks & tombol rata tengah di menu HP */
+        padding: 10px 0;
+    }
+}
+
+/* Jika navbar kamu berubah warna saat di-scroll (sticky), 
+   gunakan class ini agar teks ikut berubah gelap */
+.scroll .custom-nav-text {
+    color: #333333 !important;
 }
