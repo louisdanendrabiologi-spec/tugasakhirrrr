@@ -145,8 +145,11 @@ blockquote {
 /* Hero */
 
 #infinite {
-	background-color: #222;
+  background-color: #222;
   background-image: url(../img/IMG_1807.JPG);
+  background-size: cover;
+  background-position: 50% 40%;
+  width: 100%;
   background-repeat: no-repeat;
   height: 100vh;
   min-height: 375px;
