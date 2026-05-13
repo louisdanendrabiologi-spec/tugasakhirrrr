@@ -268,16 +268,23 @@ blockquote {
 }
 
 #testimonials {
-color: white;
-background-image: url(../img/infinite-loop-02.jpg);
-background-size: cover;       /* WAJIB: Ini yang bikin gambar nutup semua celah */
-background-position: center;  /* Biar pemandangan sawahnya pas di tengah */
-background-repeat: no-repeat;
-position: relative;
-min-height: 100vh;           /* Pakai min-height agar kalau teksnya panjang, background ikut nambah */
-width: 100%;                 /* Ganti dari 70% ke 100% biar gak ada putih di samping juga */
-display: flex;               /* Opsional: Biar konten di dalamnya rapi di tengah */
-align-items: center;
+  color: white;
+  background-image: url(../img/infinite-loop-02.jpg);
+  
+  /* JURUS BIAR NGE-ZOOM DAN FULL */
+  background-size: cover;           /* Gambar akan nge-zoom otomatis biar nutup */
+  background-position: center center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;     /* Efek keren: gambar diam saat di-scroll */
+  
+  /* MENGHILANGKAN PUTIH-PUTIH */
+  width: 100% !important;           /* Pakai !important biar gak didebat template */
+  min-height: 100vh;                /* Minimal setinggi layar HP/Laptop */
+  padding: 100px 0;                 /* Kasih ruang atas bawah biar konten gak mepet */
+  
+  margin: 0; 
+  display: block;
+  position: relative;
 }
 
 @media (max-width: 991px) {
