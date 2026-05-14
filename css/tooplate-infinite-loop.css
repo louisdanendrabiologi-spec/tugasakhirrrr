@@ -270,21 +270,16 @@ blockquote {
 #testimonials {
   color: white;
   background-image: url(../img/infinite-loop-02.jpg);
-  
-  /* JURUS BIAR NGE-ZOOM DAN FULL */
-  background-size: cover;           /* Gambar akan nge-zoom otomatis biar nutup */
-  background-position: center center; 
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;     /* Efek keren: gambar diam saat di-scroll */
+  background-attachment: fixed;
   
-  /* MENGHILANGKAN PUTIH-PUTIH */
-  width: 100% !important;           /* Pakai !important biar gak didebat template */
-  min-height: 100vh;                /* Minimal setinggi layar HP/Laptop */
-  padding: 100px 0;                 /* Kasih ruang atas bawah biar konten gak mepet */
-  
-  margin: 0; 
-  display: block;
+  /* Hapus width 100% !important, ganti dengan ini: */
+  min-height: 100vh;
+  padding: 100px 0;
   position: relative;
+  overflow: hidden; /* Menghilangkan bocor putih ke samping */
 }
 
 @media (max-width: 991px) {
