@@ -283,34 +283,36 @@ blockquote {
   background-repeat: no-repeat;
   background-attachment: fixed;
   
-  /* Hapus width 100% !important, ganti dengan ini: */
-  min-height: 100vh;
-  padding: 100px 0;
+  /* PERBAIKAN DI SINI */
+  min-height: auto;       /* Ubah dari 100vh ke auto agar tingginya mengikuti konten */
+  padding: 120px 0;       /* Beri ruang atas bawah yang seimbang */
   position: relative;
-  overflow: hidden; /* Menghilangkan bocor putih ke samping */
+  overflow: hidden; 
 }
 
 @media (max-width: 991px) {
   #testimonials {
     background-image: url(../img/infinite-loop-02-mobile.jpg);
+    background-attachment: scroll; /* Di HP sebaiknya scroll agar background tidak pecah */
   }
 }
 
-.tm-testimonials-content {
-  position: relative;
-  z-index: 100;
-}
-
+/* PERBAIKAN OVERLAY SUPAYA MENUTUP SEMPURNA */
 .tm-bg-overlay {
   width: 100%;
   height: 100%;
-  background: rgba(20, 70, 80, 0.2);
+  background: rgba(20, 70, 80, 0.45); /* Naikkan ke 0.45 agar teks testimonial lebih kontras dibaca */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: 1; /* Biarkan di belakang konten */
+}
+
+.tm-testimonials-content {
+  position: relative;
+  z-index: 5; /* Pastikan teks berada di atas overlay */
 }
 
 .tm-testimonials-carousel {
