@@ -154,7 +154,7 @@ blockquote {
 
 #infinite {
   background-image: url(../img/home1.jpg);
-  background-size: cover;
+  background-size: contain;
   background-position: 50% 40%;
   width: 100%;
   background-repeat: no-repeat;
@@ -278,7 +278,7 @@ blockquote {
 #testimonials {
   color: white;
   background-image: url(../img/infinite-loop-02.jpg);
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
