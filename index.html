@@ -230,9 +230,9 @@ https://www.tooplate.com/view/2117-infinite-loop
       <div class="container tm-container-gallery">
         <div class="row">
           <div class="text-center col-12">
-              <h2 class="tm-text-primary tm-section-title mb-4">Galeri</h2>
+              <h2 class="tm-text-primary tm-section-title mb-4">Foto</h2>
               <p class="mx-auto tm-section-desc">
-              Aku suka foto-foto sejak ngelihat channel "Teo Crawford" dengan color grading khasnya yang soft, aku lebih ke street fotografi dan random.
+                
               </p>
           </div>            
         </div>
@@ -346,7 +346,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="contact-item">
                       <a rel="nofollow" href="#" class="item-link">
                           <i class="far fa-2x fa-comment mr-4"></i>
-                          <span class="mb-0">info@davidgoggins.com</span>
+                          <span class="mb-0">@davidgoggins</span>
                       </a>              
                     </div>
                     
@@ -576,42 +576,42 @@ https://www.tooplate.com/view/2117-infinite-loop
     </script>
     <script src="login/js/welcome.js"></script>
       <script>
-  // Fungsi supaya tombol Login bisa diklik dan pindah halaman
-  function goLogin() {
-    window.location.href = "login/index.html"; // Sesuaikan dengan folder loginmu
-  }
-
-  // Fungsi untuk Logout
-  function logout() {
-    localStorage.removeItem("user"); // Menghapus kunci "user" yang dibuat oleh API gurumu
-    window.location.reload(); // Refresh halaman agar kembali ke tulisan "Belum login"
-  }
-
-  // Cek status login saat halaman utama dimuat
-  document.addEventListener("DOMContentLoaded", function() {
-    // Membaca data "user" yang disimpan oleh kode login API gurumu
-    const user = localStorage.getItem("user");
-    
-    const userInfo = document.getElementById("userInfo");
-    const authArea = document.getElementById("authArea");
-
-    // JIKA USER SUDAH BERHASIL LOGIN (Data "user" ada di browser)
-    if (user) {
-      if (userInfo) {
-        // Ganti tulisan "Belum login" menjadi "Selamat Datang, NamaUser"
-        // Kita beri class custom-nav-text agar warna teksnya aman saat navbar di-scroll
-        userInfo.innerHTML = `<span class="custom-nav-text">Selamat Datang, <b>${user}</b></span>`;
-      }
+        // Fungsi supaya tombol Login bisa diklik dan pindah halaman
+        function goLogin() {
+          window.location.href = "login/index.html"; // Sesuaikan dengan folder loginmu
+        }
       
-      // Cari tombol login yang ada di dalam authArea, lalu ganti menjadi tombol Logout merah
-      const loginBtn = authArea.querySelector("button");
-      if (loginBtn) {
-        loginBtn.className = "btn btn-danger btn-sm";
-        loginBtn.textContent = "Logout";
-        loginBtn.setAttribute("onclick", "logout()");
-      }
-    }
-  });
-</script>
+        // Fungsi untuk Logout
+        function logout() {
+          localStorage.removeItem("user"); // Menghapus kunci "user" yang dibuat oleh API gurumu
+          window.location.reload(); // Refresh halaman agar kembali ke tulisan "Belum login"
+        }
+      
+        // Cek status login saat halaman utama dimuat
+        document.addEventListener("DOMContentLoaded", function() {
+          // Membaca data "user" yang disimpan oleh kode login API gurumu
+          const user = localStorage.getItem("user");
+          
+          const userInfo = document.getElementById("userInfo");
+          const authArea = document.getElementById("authArea");
+      
+          // JIKA USER SUDAH BERHASIL LOGIN (Data "user" ada di browser)
+          if (user) {
+            if (userInfo) {
+              // Ganti tulisan "Belum login" menjadi "Selamat Datang, NamaUser"
+              // Kita beri class custom-nav-text agar warna teksnya aman saat navbar di-scroll
+              userInfo.innerHTML = `<span class="custom-nav-text">Selamat Datang, <b>${user}</b></span>`;
+            }
+            
+            // Cari tombol login yang ada di dalam authArea, lalu ganti menjadi tombol Logout merah
+            const loginBtn = authArea.querySelector("button");
+            if (loginBtn) {
+              loginBtn.className = "btn btn-danger btn-sm";
+              loginBtn.textContent = "Logout";
+              loginBtn.setAttribute("onclick", "logout()");
+            }
+          }
+        });
+      </script>
   </body>
 </html>
