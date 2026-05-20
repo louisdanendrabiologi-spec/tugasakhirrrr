@@ -598,9 +598,9 @@ https://www.tooplate.com/view/2117-infinite-loop
           // JIKA USER SUDAH BERHASIL LOGIN (Data "user" ada di browser)
           if (user) {
             if (userInfo) {
-              // Ganti tulisan "Belum login" menjadi "Selamat Datang, NamaUser"
+              // Ganti tulisan "Belum login" menjadi "Hai, NamaUser"
               // Kita beri class custom-nav-text agar warna teksnya aman saat navbar di-scroll
-              userInfo.innerHTML = `<span class="custom-nav-text">Selamat Datang, <b>${user}</b></span>`;
+              userInfo.innerHTML = `<span class="custom-nav-text">Hai, <b>${user}</b></span>`;
             }
             
             // Cari tombol login yang ada di dalam authArea, lalu ganti menjadi tombol Logout merah
