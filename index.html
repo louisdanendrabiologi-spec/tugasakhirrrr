@@ -592,6 +592,13 @@ https://www.tooplate.com/view/2117-infinite-loop
           const user = localStorage.getItem("user");
           const userInfo = document.getElementById("userInfo");
           const authArea = document.getElementById("authArea");
+
+          if (user) {
+            // Pastikan baris ini ada sebelum innerHTML
+            const userInfo = document.getElementById("userInfo"); 
+            
+            userInfo.innerHTML = `Selamat Datang, <b>${user}</b>`;
+          }
       
           if (user) {
             // Ganti tulisan "Belum login" jadi nama user
