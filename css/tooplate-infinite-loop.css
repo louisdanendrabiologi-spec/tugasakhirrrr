@@ -155,7 +155,7 @@ blockquote {
 #infinite {
   background-image: url(../img/home1.jpg);
   background-size: contain;
-  background-position: 50% 60%;
+  background-position: 50% 100%;
   width: 100%;
   background-repeat: no-repeat;
   height: 100vh;
