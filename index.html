@@ -576,42 +576,42 @@ https://www.tooplate.com/view/2117-infinite-loop
     </script>
     <script src="login/js/welcome.js"></script>
       <script>
-        // Fungsi supaya tombol Login bisa diklik dan pindah halaman
-        function goLogin() {
-          window.location.href = "login/index.html";
-        }
-      
-        // Fungsi untuk Logout
-        function logout() {
-          localStorage.removeItem("user");
-          window.location.reload();
-        }
-      
-        // Cek status login saat halaman dimuat
-        document.addEventListener("DOMContentLoaded", function() {
-          const user = localStorage.getItem("user");
-          const userInfo = document.getElementById("userInfo");
-          const authArea = document.getElementById("authArea");
+  // Fungsi supaya tombol Login bisa diklik dan pindah halaman
+  function goLogin() {
+    window.location.href = "login/index.html"; // Sesuaikan dengan folder loginmu
+  }
 
-          if (user) {
-            // Pastikan baris ini ada sebelum innerHTML
-            const userInfo = document.getElementById("userInfo"); 
-            
-            userInfo.innerHTML = `Selamat Datang, <b>${user}</b>`;
-          }
+  // Fungsi untuk Logout
+  function logout() {
+    localStorage.removeItem("user"); // Menghapus kunci "user" yang dibuat oleh API gurumu
+    window.location.reload(); // Refresh halaman agar kembali ke tulisan "Belum login"
+  }
+
+  // Cek status login saat halaman utama dimuat
+  document.addEventListener("DOMContentLoaded", function() {
+    // Membaca data "user" yang disimpan oleh kode login API gurumu
+    const user = localStorage.getItem("user");
+    
+    const userInfo = document.getElementById("userInfo");
+    const authArea = document.getElementById("authArea");
+
+    // JIKA USER SUDAH BERHASIL LOGIN (Data "user" ada di browser)
+    if (user) {
+      if (userInfo) {
+        // Ganti tulisan "Belum login" menjadi "Selamat Datang, NamaUser"
+        // Kita beri class custom-nav-text agar warna teksnya aman saat navbar di-scroll
+        userInfo.innerHTML = `<span class="custom-nav-text">Selamat Datang, <b>${user}</b></span>`;
+      }
       
-          if (user) {
-            // Ganti tulisan "Belum login" jadi nama user
-            userInfo.innerHTML = `Selamat Datang, <b>${user}</b>`;
-            // Ganti tombol Login jadi tombol Logout
-            authArea.innerHTML = `<button onclick="logout()" class="btn btn-danger btn-sm">Logout</button>`;
-          }
-          if (user) {
-              // Tambahkan class custom-nav-text di sini agar warnanya ikut aturan CSS kita
-              userInfo.innerHTML = `<span class="custom-nav-text">Selamat Datang, <b>${user}</b></span>`;
-              authArea.innerHTML = `<button onclick="logout()" class="btn btn-danger btn-sm">Logout</button>`;
-          }
-        });
-      </script>
+      // Cari tombol login yang ada di dalam authArea, lalu ganti menjadi tombol Logout merah
+      const loginBtn = authArea.querySelector("button");
+      if (loginBtn) {
+        loginBtn.className = "btn btn-danger btn-sm";
+        loginBtn.textContent = "Logout";
+        loginBtn.setAttribute("onclick", "logout()");
+      }
+    }
+  });
+</script>
   </body>
 </html>
