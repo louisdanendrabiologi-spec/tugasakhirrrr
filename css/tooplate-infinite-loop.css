@@ -292,7 +292,7 @@ blockquote {
 
 @media (max-width: 991px) {
   #testimonials {
-    background-image: url(../img/infinite-loop-02-mobile.jpg);
+    background-image: url(../img/home1jpg);
     background-attachment: scroll; /* Di HP sebaiknya scroll agar background tidak pecah */
   }
 }
