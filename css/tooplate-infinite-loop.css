@@ -154,10 +154,10 @@ blockquote {
 
 #infinite {
   background-image: url(../img/David1.jpg);
-  background-size: contain;
-  background-position: 50% 100%;
+  background-size: cover;
+  background-position: 50% 40%;
   width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 100vh;
   min-height: 375px;
   position: relative;
@@ -277,10 +277,10 @@ blockquote {
 
 #testimonials {
   color: white;
-  background-image: url(../img/infinite-loop-02.jpg);
-  background-size: contain;
+  background-image: url(../img/home1.jpg);
+  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   
   /* PERBAIKAN DI SINI */
